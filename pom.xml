@@ -14,6 +14,7 @@
 
 	<properties>
 		<jetty.version>9.3.10.M0</jetty.version>
+		<esh.version>0.9.0-SNAPSHOT</esh.version>
 	</properties>
 
 	<build>
@@ -56,7 +57,7 @@
 								<artifactItem>
 									<groupId>org.eclipse.smarthome.products</groupId>
 									<artifactId>org.eclipse.smarthome.repo</artifactId>
-									<version>${project.version}</version>
+									<version>${esh.version}</version>
 									<type>zip</type>
 								</artifactItem>
 							</artifactItems>
@@ -75,7 +76,7 @@
 								<artifactItem>
 									<groupId>org.eclipse.smarthome.products</groupId>
 									<artifactId>org.eclipse.smarthome.designer.product</artifactId>
-									<version>${project.version}</version>
+									<version>${esh.version}</version>
 									<type>zip</type>
 								</artifactItem>
 							</artifactItems>
@@ -122,14 +123,14 @@
 		<dependency>
 			<groupId>org.eclipse.smarthome.products</groupId>
 			<artifactId>org.eclipse.smarthome.repo</artifactId>
-			<version>${project.version}</version>
+			<version>${esh.version}</version>
 			<type>zip</type>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.smarthome.products</groupId>
 			<artifactId>org.eclipse.smarthome.designer.product</artifactId>
-			<version>${project.version}</version>
+			<version>${esh.version}</version>
 			<type>zip</type>
 			<exclusions>
 				<exclusion>
