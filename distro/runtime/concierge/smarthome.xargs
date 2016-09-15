@@ -102,7 +102,7 @@
 -istart ${concierge.dir}/org.eclipse.concierge.service.xmlparser-${concierge.version}*.jar
 
 # CM Configuration Admin
--istart ${system.dir}/org.eclipse.osgi.services_3.4.0*.jar
+-istart ${system.dir}/org.eclipse.osgi.services-3.*.jar
 -istart ${system.dir}/org.apache.felix.configadmin-1.8.8*.jar
 
 # Events
@@ -112,36 +112,35 @@
 -istart ${system.dir}/org.apache.felix.scr-1.8.2*.jar
 
 # Enable logging. Use slf4j facade with logback backend. Install bridges for JCL, JUL and log4j
--install ${system.dir}/org.slf4j.api_1.7.2*.jar
--install ${system.dir}/ch.qos.logback.core_1.0.7*.jar
--install ${system.dir}/ch.qos.logback.classic_1.0.7*.jar
--install ${system.dir}/ch.qos.logback.slf4j_1.0.7*.jar
--start ${system.dir}/org.slf4j.api_1.7.2*.jar
--start ${system.dir}/ch.qos.logback.core_1.0.7*.jar
--start ${system.dir}/ch.qos.logback.classic_1.0.7*.jar
+-install ${system.dir}/slf4j-api-1.7.2*.jar
+-install ${system.dir}/logback-core-1.0.7*.jar
+-install ${system.dir}/logback-classic-1.0.7*.jar
+-start ${system.dir}/slf4j-api-1.7.2*.jar
+-start ${system.dir}/logback-core-1.0.7*.jar
+-start ${system.dir}/logback-classic-1.0.7*.jar
 
 # Add Log bridges
--istart ${system.dir}/org.slf4j.jcl_1.7.2*.jar
--istart ${system.dir}/org.slf4j.jul_1.7.2*.jar
--istart ${system.dir}/org.slf4j.log4j_1.7.2*.jar
+#-istart ${system.dir}/jcl-over-slf4j-1.7.2*.jar
+#-istart ${system.dir}/jul-to-slf4j-1.7.2*.jar
+#-istart ${system.dir}/log4j-over-slf4j-1.7.2*.jar
 
  # Enable common javax packages
--istart ${system.dir}/javax.servlet_3.1*.jar
+-istart ${system.dir}/javax.servlet-api-3.1*.jar
 
  # Apache libs
--istart ${system.dir}/org.apache.commons.io_2.2.0*.jar
--istart ${system.dir}/org.apache.commons.lang_2.6.0*.jar
--istart ${system.dir}/org.apache.commons.codec_1.6.0*.jar
--istart ${system.dir}/org.apache.commons.exec_1.1.0*.jar
--istart ${system.dir}/org.apache.commons.collections_3.2.0*.jar
--istart ${system.dir}/org.apache.commons.logging_1.1.1*.jar
+-istart ${system.dir}/commons-io-2.2*.jar
+-istart ${system.dir}/commons-lang-2.6*.jar
+-istart ${system.dir}/commons-codec-1.6*.jar
+-istart ${system.dir}/commons-exec-1.1*.jar
+-istart ${system.dir}/commons-collections-3.2*.jar
+#-istart ${system.dir}/commons-logging-1.1*.jar
 
 # Other libs
--istart ${system.dir}/com.ibm.icu.base_52.1.0*.jar
--istart ${system.dir}/org.antlr.runtime_3.2.0*.jar
--istart ${system.dir}/com.google.guava_10.*.jar
--istart ${system.dir}/com.google.inject_3.0.0*.jar
--istart ${system.dir}/com.google.gson_2.2.4*.jar
+-istart ${system.dir}/icu4j-52.1*.jar
+-istart ${system.dir}/org.antlr.runtime*.jar
+-istart ${system.dir}/com.google.guava*.jar
+-istart ${system.dir}/com.google.inject*.jar
+-istart ${system.dir}/gson-2.2.4*.jar
  
  # Jersey (JSR-311) reference implementation for RESTful interfaces, with publisher and GSON provider
 -istart ${system.dir}/jersey-min-2.22*.jar
@@ -149,7 +148,7 @@
 -istart ${system.dir}/provider-gson-2.3*.jar
 
 # Jetty modules
--istart ${system.dir}/org.eclipse.equinox.http.servlet_1.1.500*.jar
+-istart ${system.dir}/servlet-1.0*.jar
 -istart ${jetty.dir}/jetty-util-${jetty.version}*.jar
 -istart ${jetty.dir}/jetty-io-${jetty.version}*.jar
 -istart ${jetty.dir}/jetty-http-${jetty.version}*.jar
@@ -165,9 +164,8 @@
 -istart ${jetty.dir}/jetty-osgi-boot-${jetty.version}*.jar
 
 # HTTP client
--istart ${system.dir}/org.apache.commons.httpclient_3.1.0*.jar
--istart ${system.dir}/org.apache.httpcomponents.httpcore_4.3.3*.jar
--istart ${system.dir}/org.apache.httpcomponents.httpclient_4.3.6*.jar
+#-istart ${system.dir}/httpcore-osgi-4.3.3*.jar
+#-istart ${system.dir}/httpclient-osgi-4.3.6*.jar
 
 # Jetty Client
 -istart ${jetty.dir}/jetty-client-${jetty.version}*.jar
@@ -176,7 +174,7 @@
 -istart ${system.dir}/mapdb-1.0.9*.jar
 
 # jUPNP
--istart ${system.dir}/org.jupnp-2.2.0*.jar
+#-istart ${system.dir}/org.jupnp-2.2.0*.jar
 
 # jMDNS
 -istart ${system.dir}/jmdns-3.5.1*.jar
@@ -199,13 +197,13 @@
 -istart ${esh.dir}/org.eclipse.smarthome.storage.mapdb-${esh.version}*.jar
 
 # Eclipse Smarthome IO modules
--istart ${esh.dir}/org.eclipse.smarthome.io.transport.upnp-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.rest-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.rest.core-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.rest.sse-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.monitor-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.net-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.transport.mdns-${esh.version}*.jar
+#-istart ${esh.dir}/org.eclipse.smarthome.io.transport.upnp-${esh.version}*.jar
 #-istart ${esh.dir}/org.eclipse.smarthome.io.transport.mqtt-${esh.version}*.jar
 
 # Eclipse Smarthome Automation modules

@@ -47,25 +47,6 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>unpack-platform</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/platform</outputDirectory>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.eclipse.smarthome.products</groupId>
-                                    <artifactId>org.eclipse.smarthome.designer.product</artifactId>
-                                    <version>${esh.version}</version>
-                                    <type>zip</type>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-
-                    <execution>
                         <id>copy-esh-dependencies</id>
                         <goals>
                             <goal>copy-dependencies</goal>
@@ -73,15 +54,26 @@
                         <phase>process-resources</phase>
                         <configuration>
                             <outputDirectory>${project.build.directory}/org.eclipse.smarthome</outputDirectory>
-                          <includeGroupIds>
-                              org.eclipse.smarthome.core,
-                              org.eclipse.smarthome.config,
-                              org.eclipse.smarthome.io,
-                              org.eclipse.smarthome.automation,
-                              org.eclipse.smarthome.storage,
-                              org.eclipse.smarthome.extension,
-                              org.eclipse.smarthome.extension.ui
-                          </includeGroupIds>
+                            <includeGroupIds>
+                                org.eclipse.smarthome.core,
+                                org.eclipse.smarthome.config,
+                                org.eclipse.smarthome.io,
+                                org.eclipse.smarthome.automation,
+                                org.eclipse.smarthome.storage,
+                                org.eclipse.smarthome.extension,
+                                org.eclipse.smarthome.extension.ui
+                            </includeGroupIds>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-jetty-dependencies</id>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/org.eclipse.jetty</outputDirectory>
+                            <includeGroupIds>org.eclipse.jetty</includeGroupIds>
                         </configuration>
                     </execution>
                     <execution>
@@ -91,7 +83,7 @@
                         </goals>
                         <phase>process-resources</phase>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/platform/plugins</outputDirectory>
+                            <outputDirectory>${project.build.directory}/platform</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -121,19 +113,6 @@
     </build>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.eclipse.smarthome.products</groupId>
-            <artifactId>org.eclipse.smarthome.designer.product</artifactId>
-            <version>${esh.version}</version>
-            <type>zip</type>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>org.apache.felix.webconsole</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
 
         <!-- Eclipse Smarthome dependencies - CORE -->
         <dependency>
@@ -313,7 +292,6 @@
             <version>${esh.version}</version>
         </dependency>
 
-
         <!-- Felix dependencies -->
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -340,6 +318,21 @@
             <artifactId>org.apache.felix.webconsole</artifactId>
             <version>4.2.16</version>
             <classifier>all</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.gogo.runtime</artifactId>
+            <version>0.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.gogo.command</artifactId>
+            <version>0.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.gogo.shell</artifactId>
+            <version>0.12.0</version>
         </dependency>
 
         <!-- Jetty dependencies -->
@@ -382,6 +375,120 @@
             <version>2.3</version>
         </dependency>
 
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <!-- Commons -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-exec</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>52.1</version>
+        </dependency>
+        <dependency>
+            <groupId>de.maggu2810.p2redist</groupId>
+            <artifactId>com.google.guava</artifactId>
+            <version>10.0.1.v201203051515</version>
+        </dependency>
+        <dependency>
+            <groupId>de.maggu2810.p2redist</groupId>
+            <artifactId>com.google.inject</artifactId>
+            <version>3.0.0.v201312141243</version>
+        </dependency>
+        <dependency>
+            <groupId>de.maggu2810.p2redist</groupId>
+            <artifactId>org.antlr.runtime</artifactId>
+            <version>3.2.0.v201101311130</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr-runtime</artifactId>
+            <version>3.2</version>
+        </dependency>
+
+        <!-- Equinox http servlet -->
+        <dependency>
+            <groupId>org.eclipse.equinox.http</groupId>
+            <artifactId>servlet</artifactId>
+            <version>1.0.0-v20070606</version>
+        </dependency>
+
+        <!-- Http client -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore-osgi</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient-osgi</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+
+
         <!-- MapDB -->
         <dependency>
             <groupId>org.mapdb</groupId>
@@ -405,6 +512,11 @@
     </dependencies>
 
     <repositories>
+        <repository>
+            <id>asdf</id>
+            <url>https://dl.bintray.com/maggu2810/maven</url>
+            <layout>default</layout>
+        </repository>
         <repository>
             <id>jCenter</id>
             <url>https://dl.bintray.com/jupnp/mvn/</url>
