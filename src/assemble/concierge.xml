@@ -52,18 +52,11 @@
 
         <!-- include eclipse smarthome modules -->
         <fileSet>
-            <directory>${project.build.directory}/org.eclipse.smarthome/plugins</directory>
+            <directory>${project.build.directory}/org.eclipse.smarthome/</directory>
             <outputDirectory>runtime/concierge/system/org.eclipse.smarthome/</outputDirectory>
             <includes>
                 <include>*.jar</include>
             </includes>
-
-            <!-- for smaller zip file, exclude all source packages. Also exclude not
-                runnable .model modules -->
-            <excludes>
-                <exclude>*.source_*</exclude>
-                <exclude>org.eclipse.smarthome.model.*.jar</exclude>
-            </excludes>
         </fileSet>
 
         <!-- include 3rd party libs -->

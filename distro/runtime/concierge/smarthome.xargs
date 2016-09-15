@@ -3,7 +3,7 @@
 # Version configuration
 -Dconcierge.version=5.0.0
 -Djetty.version=9.3.10
--Desh.version=0.9.0
+-Desh.version=0.9.0.b1
 
 # uncomment to clean storage first
 -Dorg.osgi.framework.storage.clean=onFirstInit
@@ -179,50 +179,49 @@
 -istart ${system.dir}/org.jupnp-2.2.0*.jar
 
 # jMDNS
--istart ${system.dir}/jmdns-3.4.1*.jar
+-istart ${system.dir}/jmdns-3.5.1*.jar
 
 # Eclipse Smarthome modules
--istart ${esh.dir}/org.eclipse.smarthome.core_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.autoupdate_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.config.core_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.persistence_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.console_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.console.rfc147_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.thing_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.config.discovery_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.config.xml_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.binding.xml_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.thing.xml_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.scheduler_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.transform_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.voice_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.core.id_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.storage.mapdb_${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.autoupdate-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.config.core-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.persistence-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.console-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.console.rfc147-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.thing-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.config.discovery-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.config.xml-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.binding.xml-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.thing.xml-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.scheduler-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.transform-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.core.id-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.storage.mapdb-${esh.version}*.jar
 
 # Eclipse Smarthome IO modules
--istart ${esh.dir}/org.eclipse.smarthome.io.transport.upnp_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.rest_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.rest.core_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.rest.sse_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.monitor_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.net_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.io.transport.mdns_${esh.version}*.jar
-#-istart ${esh.dir}/org.eclipse.smarthome.io.transport.mqtt_${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.transport.upnp-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.rest-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.rest.core-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.rest.sse-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.monitor-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.net-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.transport.mdns-${esh.version}*.jar
+#-istart ${esh.dir}/org.eclipse.smarthome.io.transport.mqtt-${esh.version}*.jar
 
 # Eclipse Smarthome Automation modules
--istart ${esh.dir}/org.eclipse.smarthome.automation.api_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.commands_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.core_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.parser.gson_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.providers_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.rest_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.module.core_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.module.script_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.module.script.defaultscope_${esh.version}*.jar
--istart ${esh.dir}/org.eclipse.smarthome.automation.module.timer_${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.api-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.commands-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.core-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.parser.gson-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.providers-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.rest-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.module.core-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.module.script-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.module.script.defaultscope-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.automation.module.timer-${esh.version}*.jar
 
 # Eclipse Smarthome UI
--istart ${esh.dir}/org.eclipse.smarthome.ui.paper_${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.ui.paper-${esh.version}*.jar
 
 # FileInstall as last bundle to allow to install add-ons
 -istart ${system.dir}/org.apache.felix.fileinstall-3.5.0*.jar
