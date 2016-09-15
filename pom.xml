@@ -395,9 +395,21 @@
             <artifactId>jmdns</artifactId>
             <version>3.5.1</version>
         </dependency>
+
+        <!-- jUpnp -->
+        <dependency>
+            <groupId>org.jupnp</groupId>
+            <artifactId>org.jupnp</artifactId>
+            <version>2.2.0</version>
+        </dependency>
     </dependencies>
 
     <repositories>
+        <repository>
+            <id>jCenter</id>
+            <url>https://dl.bintray.com/jupnp/mvn/</url>
+            <layout>default</layout>
+        </repository>
         <repository>
             <id>eclipse-releases</id>
             <name>Eclipse Snapshot Repository (Releases)</name>

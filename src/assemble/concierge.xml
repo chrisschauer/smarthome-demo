@@ -109,6 +109,8 @@
                 <!-- JmDNS -->
                 <include>jmdns-*</include>
 
+                <!-- JmDNS -->
+                <include>org.jupnp-*</include>
             </includes>
         </fileSet>
 
