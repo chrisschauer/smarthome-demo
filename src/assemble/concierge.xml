@@ -15,8 +15,10 @@
     <fileSets>
         <!-- include base folder structure and scripts -->
         <fileSet>
-            <directory>${project.basedir}/distro</directory>
+            <directory>${project.basedir}/distro/</directory>
             <outputDirectory>.</outputDirectory>
+            <filtered>false</filtered>
+            <fileMode>0644</fileMode>
             <includes>
                 <include>**/*</include>
             </includes>
@@ -27,9 +29,10 @@
 
         <!-- Add scripts with execute permission -->
         <fileSet>
-            <directory>${project.basedir}/distro</directory>
+            <directory>${project.basedir}/distro/</directory>
             <outputDirectory>.</outputDirectory>
-            <fileMode>0755</fileMode>
+            <filtered>false</filtered>
+            <fileMode>0777</fileMode>
             <includes>
                 <include>**/*.sh</include>
             </includes>
@@ -39,6 +42,9 @@
         <fileSet>
             <directory>${project.build.directory}/concierge/concierge-incubation-5.0.0/</directory>
             <outputDirectory>runtime/concierge</outputDirectory>
+            <filtered>false</filtered>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
             <includes>
                 <include>bundles/*.jar</include>
                 <include>framework/*.jar</include>
@@ -53,6 +59,9 @@
         <fileSet>
             <directory>${project.build.directory}/org.eclipse.smarthome/</directory>
             <outputDirectory>runtime/concierge/system/org.eclipse.smarthome/</outputDirectory>
+            <filtered>false</filtered>
+            <fileMode>0644</fileMode>
+            <directoryMode>0755</directoryMode>
             <includes>
                 <include>*.jar</include>
             </includes>
@@ -62,6 +71,8 @@
         <fileSet>
             <directory>${project.build.directory}/platform/</directory>
             <outputDirectory>runtime/concierge/system/</outputDirectory>
+            <filtered>false</filtered>
+            <fileMode>0644</fileMode>
 
             <includes>
                 <include>org.osgi.enterprise-*</include>
@@ -120,6 +131,7 @@
         <fileSet>
             <directory>${project.build.directory}/org.eclipse.jetty/</directory>
             <outputDirectory>runtime/concierge/system/org.eclipse.jetty</outputDirectory>
+            <fileMode>0644</fileMode>
             <includes>
 
                 <!-- Jetty server libs -->

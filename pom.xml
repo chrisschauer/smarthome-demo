@@ -64,6 +64,7 @@
                                 org.eclipse.smarthome.extension,
                                 org.eclipse.smarthome.extension.ui
                             </includeGroupIds>
+                            <ignorePermissions>true</ignorePermissions>
                         </configuration>
                     </execution>
                     <execution>
