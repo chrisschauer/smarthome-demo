@@ -32,7 +32,7 @@
             <directory>${project.basedir}/distro/</directory>
             <outputDirectory>.</outputDirectory>
             <filtered>false</filtered>
-            <fileMode>0777</fileMode>
+            <fileMode>0755</fileMode>
             <includes>
                 <include>**/*.sh</include>
             </includes>
