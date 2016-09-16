@@ -292,6 +292,13 @@
             <version>${esh.version}</version>
         </dependency>
 
+        <!-- OSGI http services -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.enterprise</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+
         <!-- Felix dependencies -->
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -431,18 +438,19 @@
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
-            <version>3.2</version>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.1</version>
+            <version>1.1.3</version>
         </dependency>
         <dependency>
-            <groupId>com.ibm.icu</groupId>
-            <artifactId>icu4j</artifactId>
-            <version>52.1</version>
+            <groupId>at.bestsolution.eclipse</groupId>
+            <artifactId>com.ibm.icu.base</artifactId>
+            <version>52.1.0</version>
         </dependency>
+
         <dependency>
             <groupId>de.maggu2810.p2redist</groupId>
             <artifactId>com.google.guava</artifactId>
@@ -487,7 +495,6 @@
             <artifactId>httpclient-osgi</artifactId>
             <version>4.3.6</version>
         </dependency>
-
 
         <!-- MapDB -->
         <dependency>

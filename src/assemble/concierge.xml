@@ -49,7 +49,6 @@
             </excludes>
         </fileSet>
 
-
         <!-- include eclipse smarthome modules -->
         <fileSet>
             <directory>${project.build.directory}/org.eclipse.smarthome/</directory>
@@ -65,11 +64,12 @@
             <outputDirectory>runtime/concierge/system/</outputDirectory>
 
             <includes>
-                <include>org.eclipse.osgi.services-3.*</include>
+                <include>org.osgi.enterprise-*</include>
 
                 <!-- Logging -->
                 <include>*slf4j*-*</include>
                 <include>logback*</include>
+                <include>pax-*</include>
 
                 <!-- Servlet -->
                 <include>javax.servlet-api-3.1*</include>
@@ -86,7 +86,7 @@
                 <include>com.google.inject-*</include>
                 <include>gson-*</include>
                 <include>org.antlr.runtime*</include>
-                <include>icu4j*-*</include>
+                <include>com.ibm.icu*-*</include>
 
                 <!-- Apache Felix libs -->
                 <include>org.apache.felix.fileinstall*</include>

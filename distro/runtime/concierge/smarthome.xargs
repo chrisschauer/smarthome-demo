@@ -101,8 +101,10 @@
 -istart ${concierge.dir}/org.eclipse.concierge.service.startlevel-${concierge.version}*.jar
 -istart ${concierge.dir}/org.eclipse.concierge.service.xmlparser-${concierge.version}*.jar
 
+# Start OSGi services
+-istart ${system.dir}/org.osgi.enterprise-*.jar
+
 # CM Configuration Admin
--istart ${system.dir}/org.eclipse.osgi.services-3.*.jar
 -istart ${system.dir}/org.apache.felix.configadmin-1.8.8*.jar
 
 # Events
@@ -133,10 +135,10 @@
 -istart ${system.dir}/commons-codec-1.6*.jar
 -istart ${system.dir}/commons-exec-1.1*.jar
 -istart ${system.dir}/commons-collections-3.2*.jar
-#-istart ${system.dir}/commons-logging-1.1*.jar
+-istart ${system.dir}/commons-logging-1.1*.jar
 
 # Other libs
--istart ${system.dir}/icu4j-52.1*.jar
+-istart ${system.dir}/com.ibm.icu.base-*.jar
 -istart ${system.dir}/org.antlr.runtime*.jar
 -istart ${system.dir}/com.google.guava*.jar
 -istart ${system.dir}/com.google.inject*.jar
@@ -164,8 +166,8 @@
 -istart ${jetty.dir}/jetty-osgi-boot-${jetty.version}*.jar
 
 # HTTP client
-#-istart ${system.dir}/httpcore-osgi-4.3.3*.jar
-#-istart ${system.dir}/httpclient-osgi-4.3.6*.jar
+-istart ${system.dir}/httpcore-osgi-4.3.3*.jar
+-istart ${system.dir}/httpclient-osgi-4.3.6*.jar
 
 # Jetty Client
 -istart ${jetty.dir}/jetty-client-${jetty.version}*.jar
@@ -174,7 +176,7 @@
 -istart ${system.dir}/mapdb-1.0.9*.jar
 
 # jUPNP
-#-istart ${system.dir}/org.jupnp-2.2.0*.jar
+-istart ${system.dir}/org.jupnp-2.2.0*.jar
 
 # jMDNS
 -istart ${system.dir}/jmdns-3.5.1*.jar
@@ -203,8 +205,7 @@
 -istart ${esh.dir}/org.eclipse.smarthome.io.monitor-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.net-${esh.version}*.jar
 -istart ${esh.dir}/org.eclipse.smarthome.io.transport.mdns-${esh.version}*.jar
-#-istart ${esh.dir}/org.eclipse.smarthome.io.transport.upnp-${esh.version}*.jar
-#-istart ${esh.dir}/org.eclipse.smarthome.io.transport.mqtt-${esh.version}*.jar
+-istart ${esh.dir}/org.eclipse.smarthome.io.transport.upnp-${esh.version}*.jar
 
 # Eclipse Smarthome Automation modules
 -istart ${esh.dir}/org.eclipse.smarthome.automation.api-${esh.version}*.jar
