@@ -386,7 +386,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -401,18 +401,24 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.21</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.21</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>osgi-over-slf4j</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+
 
         <!-- Commons -->
         <dependency>
@@ -520,12 +526,12 @@
 
     <repositories>
         <repository>
-            <id>asdf</id>
+            <id>osgi-bundles</id>
             <url>https://dl.bintray.com/maggu2810/maven</url>
             <layout>default</layout>
         </repository>
         <repository>
-            <id>jCenter</id>
+            <id>jupnp</id>
             <url>https://dl.bintray.com/jupnp/mvn/</url>
             <layout>default</layout>
         </repository>
