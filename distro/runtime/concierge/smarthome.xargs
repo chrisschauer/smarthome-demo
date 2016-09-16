@@ -223,6 +223,9 @@
 # Eclipse Smarthome UI
 -istart ${esh.dir}/org.eclipse.smarthome.ui.paper-${esh.version}*.jar
 
+# Eclipse Smarthome Bindings. Start all bindings here
+-istart ${esh.dir}/org.eclipse.smarthome.binding.yahooweather-${esh.version}*.jar
+
 # FileInstall as last bundle to allow to install add-ons
 -istart ${system.dir}/org.apache.felix.fileinstall-3.5.0*.jar
 

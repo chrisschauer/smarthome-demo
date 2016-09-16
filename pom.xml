@@ -55,6 +55,7 @@
                         <configuration>
                             <outputDirectory>${project.build.directory}/org.eclipse.smarthome</outputDirectory>
                             <includeGroupIds>
+                                org.eclipse.smarthome.binding,
                                 org.eclipse.smarthome.core,
                                 org.eclipse.smarthome.config,
                                 org.eclipse.smarthome.io,
@@ -292,6 +293,13 @@
             <version>${esh.version}</version>
         </dependency>
 
+        <!-- Eclipse Smarthome dependencies - Bindings -->
+        <dependency>
+            <groupId>org.eclipse.smarthome.binding</groupId>
+            <artifactId>org.eclipse.smarthome.binding.yahooweather</artifactId>
+            <version>${esh.version}</version>
+        </dependency>
+
         <!-- OSGI http services -->
         <dependency>
             <groupId>org.osgi</groupId>
@@ -418,7 +426,6 @@
             <artifactId>osgi-over-slf4j</artifactId>
             <version>1.7.21</version>
         </dependency>
-
 
         <!-- Commons -->
         <dependency>
