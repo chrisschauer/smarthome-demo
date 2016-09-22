@@ -18,7 +18,7 @@ fi
 # Find the concierge framework jar
 MAIN=$(find framework -name "org.eclipse.concierge-5.0.0*.jar" | sort | tail -1);
 
-# Start in debog
+# Start the framework. Make sure java command is available
 java $JAVA_OPTS \
 	-Dosgi.clean=true \
 	-Dorg.osgi.framework.storage=$BASE_FOLDER/userdata/storage \
