@@ -1,10 +1,9 @@
 # Eclipse Smarthome Packaging Sample
 <img src="https://www.eclipse.org/concierge/images/logo.png" alt="concierge osgi" width="200"/>
 
-This repository contains a sample which runs eclipse smarthome withing an concierge OSGi container. It should show
-how easy a own smarthome distribution can be packaged.
+This repository contains a sample project which wraps eclipse smarthome withing a concierge OSGi container, a lightweight OSGi R5 implementation. You can use this example to build an own minimal distribution with an very optimized memory footprint.
 
-Additionally, you can use this example to build an own minimal distribution with an very optimized memory footprint.
+More information about concierge: https://www.eclipse.org/concierge/index.php
 
 1. Prerequisites - Install Maven
 ================
@@ -34,6 +33,18 @@ The maven build will create an ZIP file with all required components like
 
 You can find the created distribution under **/target/smarthome-packaging-sample-[version].zip**
 
+### The directory structure of the distribution
+* **addons**: Folder for hotdeployment of bundles
+* **runtime**: Contains the runtime
+ * **concierge**: Contains the conciege osgi runtime
+    * **bundles**: Additional concierge bundles
+    * **framework**: The Framework
+    * **system**: Contains commons and 3rd party bundles
+      * **org.eclipse.jetty**: All jetty bundles
+      * **org.eclipse.smarthome**: All smarthome bundles
+ * **etc**: Quartz configuration, Jetty configuration, keystore
+* **userdata**: This folder is created during the first startup and contains persistent userdata and the osgi storage.
+
 4. Start runtime
 ================
 TBD
@@ -42,7 +53,36 @@ TBD
 Customize the distribution
 ================
 ## Concierge configuration with XARGS file
-TBD
+The .xargs file can contain both runtime properties for configuring the framework, as well as a set of framework commands. Properties are declared as `-Dkey=value`. The following commands are allowed:
+
+* `-install <bundle URL> `: installs a bundle from a given bundle URL
+* `-start <bundle URL> `: starts a bundle that was previously installed from the given bundle URL
+* `-istart <bundle URL> `: install and starts a bundle from a given bundle URL
+* `-all <file directory> `: install and start all .jar files in a given directory
+* `-initlevel <level> `: sets the startlevel that will be used for all next bundles to be installed
+* `-skip `: skips the remainder of the .xargs file (handy for debugging)
+
+See for more details: https://www.eclipse.org/concierge/documentation.php#basic
+
+## How to add further bundles?
+1. Add your bundle as dependecy in the pom.xml. For example:
+```
+  <!-- Eclipse Smarthome dependencies - Bindings -->
+        <dependency>
+            <groupId>org.eclipse.smarthome.binding</groupId>
+            <artifactId>org.eclipse.smarthome.binding.wemo</artifactId>
+            <version>${esh.version}</version>
+        </dependency>
+```
+2. Add the install and startup command to XARGS file. For example:
+```
+# Eclipse Smarthome Bindings. Start all bindings here
+-istart ${esh.dir}/org.eclipse.smarthome.binding.wemo-${esh.version}*.jar
+```
+
+The bundle couldn't be started? Please check the following conditions:
+ * Is the JAR file included in the assembled ZIP? Check the /src/assemble/concierge.xml which defines the included file sets of the assembly.
+ * Maybe the required import-packages are not satisfied. Add another bundle which exports the required packages.
 
 ## Change the OSGi Shell
 The sample does already include two versions of osgi shell implementations:
