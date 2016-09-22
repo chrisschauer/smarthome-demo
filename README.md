@@ -47,7 +47,12 @@ You can find the created distribution under **/target/smarthome-packaging-sample
 
 4. Start runtime
 ================
-TBD
+Extract the distribution zip file and start the runtime:
+```
+unzip smarthome-packaging-sample-[version].zip
+cd runtime/concierge
+./start.sh
+```
 
 
 Customize the distribution
