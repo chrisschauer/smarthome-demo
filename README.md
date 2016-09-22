@@ -54,7 +54,6 @@ cd runtime/concierge
 ./start.sh
 ```
 
-
 Customize the distribution
 ================
 ## Concierge configuration with XARGS file
@@ -105,3 +104,6 @@ like:
 
 At next startup you will see the **g!** prompt instead of **concierge>**
 
+## Passing own options to JVM
+You can use `JAVA_OPTS` argument for passing own parameter to JVM e.g. the Java Heap size etc.
+JAVA_OPTS
