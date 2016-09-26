@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>Eclipse SmartHome Demo</name>
-    <description>Eclipse smarthome distribution which uses concierge OSGi container for minimal resource usage
+    <description>Eclipse SmartHome distribution which uses concierge OSGi container for minimal resource usage
     </description>
 
     <properties>
@@ -116,7 +116,7 @@
 
     <dependencies>
 
-        <!-- Eclipse Smarthome dependencies - CORE -->
+        <!-- Eclipse SmartHome dependencies - CORE -->
         <dependency>
             <groupId>org.eclipse.smarthome.core</groupId>
             <artifactId>org.eclipse.smarthome.core</artifactId>
@@ -164,7 +164,7 @@
         </dependency>
 
 
-        <!-- Eclipse Smarthome dependencies - CONFIG -->
+        <!-- Eclipse SmartHome dependencies - CONFIG -->
         <dependency>
             <groupId>org.eclipse.smarthome.config</groupId>
             <artifactId>org.eclipse.smarthome.config.core</artifactId>
@@ -181,7 +181,7 @@
             <version>${esh.version}</version>
         </dependency>
 
-        <!-- Eclipse Smarthome dependencies - IO -->
+        <!-- Eclipse SmartHome dependencies - IO -->
         <dependency>
             <groupId>org.eclipse.smarthome.io</groupId>
             <artifactId>org.eclipse.smarthome.io.console</artifactId>
@@ -228,7 +228,7 @@
             <version>${esh.version}</version>
         </dependency>
 
-        <!-- Eclipse Smarthome dependencies - Storage -->
+        <!-- Eclipse SmartHome dependencies - Storage -->
         <dependency>
             <groupId>org.eclipse.smarthome.automation</groupId>
             <artifactId>org.eclipse.smarthome.automation.core</artifactId>
@@ -280,21 +280,21 @@
             <version>${esh.version}</version>
         </dependency>
 
-        <!-- Eclipse Smarthome dependencies - Storage -->
+        <!-- Eclipse SmartHome dependencies - Storage -->
         <dependency>
             <groupId>org.eclipse.smarthome.storage</groupId>
             <artifactId>org.eclipse.smarthome.storage.mapdb</artifactId>
             <version>${esh.version}</version>
         </dependency>
 
-        <!-- Eclipse Smarthome dependencies - UI -->
+        <!-- Eclipse SmartHome dependencies - UI -->
         <dependency>
             <groupId>org.eclipse.smarthome.extension.ui</groupId>
             <artifactId>org.eclipse.smarthome.ui.paper</artifactId>
             <version>${esh.version}</version>
         </dependency>
 
-        <!-- Eclipse Smarthome dependencies - Bindings -->
+        <!-- Eclipse SmartHome dependencies - Bindings -->
         <dependency>
             <groupId>org.eclipse.smarthome.binding</groupId>
             <artifactId>org.eclipse.smarthome.binding.yahooweather</artifactId>
